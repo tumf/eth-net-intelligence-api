@@ -20,9 +20,10 @@ ENV NODE_ENV "production"
 ENV CONTACT_DETAILS ""
 ENV WS_SERVER "wss://stats.ethdev.com"
 ENV VERBOSITY 2
-ENV RPC_HOST $GETH_PORT_8545_TCP_ADDR
-ENV RPC_PORT $GETH_PORT_8545_TCP_PORT
 ENV LISTENING_PORT 30303
 
 WORKDIR /home/ethnetintel/eth-net-intelligence-api
-ENTRYPOINT ["node","app.js"]
+
+ADD start /start
+RUN chmod +x /start
+ENTRYPOINT ["/start"]

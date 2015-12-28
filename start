@@ -1,0 +1,4 @@
+#!/bin/sh
+RPC_HOST=$GETH_PORT_8545_TCP_ADDR \
+        RPC_PORT=$GETH_PORT_8545_TCP_PORT \
+        node app.js
